@@ -29,7 +29,7 @@ module PayPal::SDK::Core
 
         class Boolean
           def self.new(boolean)
-            boolean == 0 || boolean == "" || /^(false|f|no|n|0)$/i.match?(boolean) ? false : !!boolean
+            boolean == 0 || boolean == "" || boolean.to_s.match?(/^(false|f|no|n|0)$/i) ? false : !!boolean
           end
         end
 
